@@ -6,7 +6,7 @@ import { SelecaoComponent } from './selecao/selecao.component';
 const routes: Routes = [
   { path: 'painel', component: PainelComponent },
   { path: 'novo', component: SelecaoComponent },
-  { path: '**', redirectTo: '/' }
+  { path: '**', redirectTo: 'painel' }
 ];
 
 @NgModule({
