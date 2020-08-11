@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+
+    <span>Simulados</span>
+    <span fxFlex="1 1 auto"></span>
+
+    <div fxHide.lt-md>
+        <ng-contaner *ngFor="let item of menu">
+            <button mat-flat-button color="primary" (click)="clickItem(item.pagina)">{{item.texto}}</button>
+        </ng-contaner>
+    </div>
+
+    <button fxHide fxShow.lt-md mat-icon-button [matMenuTriggerFor]="dropMenu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #dropMenu="matMenu">
+        <ng-contaner *ngFor="let item of menu">
+            <button mat-menu-item (click)="clickItem(item.pagina)">{{item.texto}}</button>
+        </ng-contaner>
+    </mat-menu>
+
+</mat-toolbar>

@@ -1,0 +1,83 @@
+<div fxLayout="column" fxLayoutGap="1rem" fxLayoutAlign="start center">
+    <div fxLayout="row wrap" fxLayoutGap="1rem">
+
+        <mat-card fxFlex="1 1 40rem">
+            <h1>Últimas 5 provas realizadas</h1>
+
+            <mat-card-content>
+                <mat-table [dataSource]="dataSourceProvas">
+                    <ng-container matColumnDef="data">
+                        <mat-header-cell *matHeaderCellDef>Data</mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.data}} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="tempo">
+                        <mat-header-cell *matHeaderCellDef>Tempo</mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.tempo}} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="resultado">
+                        <mat-header-cell *matHeaderCellDef>Resultado</mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <span
+                                [style.color]="element.resultado == 'APROVADO' ? 'green' : 'red'">{{element.resultado}}</span>
+                        </mat-cell>
+                    </ng-container>
+
+                    <mat-header-row *matHeaderRowDef="displayedColumnsProvas"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumnsProvas;"></mat-row>
+                </mat-table>
+            </mat-card-content>
+        </mat-card>
+
+        <div fxFlex="1 1 40rem" fxLayout="column" fxLayoutGap="1rem">
+            <mat-card fxFlex="1 1 auto">
+                <h1>Dados do pacote</h1>
+                <mat-card-content fxLayout="row wrap" fxLayoutGap="1rem">
+                    <div fxFlex="1 1 auto">
+                        <p>Total de Créditos:</p>
+                        <p class="info">1</p>
+                    </div>
+                    <div fxFlex="1 1 auto">
+                        <button mat-flat-button color="primary">Fazer Nova Prova</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card fxFlex="1 1 auto">
+                <h1>Desempenho Geral</h1>
+                <mat-card-content fxLayout="row wrap" fxLayoutGap="1rem">
+                    <div fxFlex="1 1 auto">
+                        <p>Resultado Nota:</p>
+                        <p class="info">40,00%</p>
+                    </div>
+                    <div fxFlex="1 1 auto">
+                        <p>Seu desempenho:</p>
+                        <p [style.color]="'red'">Ruim</p>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </div>
+
+    <div fxLayout="row wrap" fxLayoutGap="1rem">
+
+        <mat-card fxFlex="1 1 40rem">
+            <h1>Desempenho por módulo</h1>
+
+            <mat-card-content>
+                <canvas id="painel-chart-desempenho" style="position: relative; height: 20rem"></canvas>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card fxFlex="1 1 40rem">
+            <h1>Média de desempenho</h1>
+
+            <mat-card-content>
+                <div mk-morris-js [options]="chartDonutOptions" [data]="chartDonutData" type="Donut"></div>
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+</div>
