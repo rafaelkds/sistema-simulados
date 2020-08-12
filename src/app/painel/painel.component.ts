@@ -36,7 +36,7 @@ export class PainelComponent implements OnInit {
     const myBarChart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: ['PRIMEIROS SOCORROS', 'REG. DA PROF. DA AERONAUTA', 'EMERGÊNCIA SOBREVIVÊNCIA E SEGURANÇA', 'CGA - CONHECIMENTOS GERAS AERONAVES'],
+          labels: ['PSS', 'RPA', 'ESS', 'CGA'],
           // backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
           // borderColor: window.chartColors.blue,
           // borderWidth: 1,
