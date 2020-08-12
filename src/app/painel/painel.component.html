@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutGap="1rem" fxLayoutAlign="start stretch">
-    <div fxLayout="row wrap" fxLayoutGap="1rem" fxLayoutAlign="center">
+    <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="1rem" fxLayoutAlign="center">
 
-        <mat-card fxFlex="1 1 20rem">
+        <mat-card fxFlex="1 1 25rem" fxFlex.lt-md="0 0 auto">
             <h1>Últimas 5 provas realizadas</h1>
 
             <mat-card-content class="custom-table-container">
@@ -30,7 +30,7 @@
             </mat-card-content>
         </mat-card>
 
-        <div fxFlex="1 1 20rem" fxLayout="column" fxLayoutGap="1rem">
+        <div fxFlex="1 1 25rem" fxFlex.lt-md="0 0 auto" fxLayout="column" fxLayoutGap="1rem">
             <mat-card fxFlex="1 1 auto">
                 <h1>Dados do pacote</h1>
                 <mat-card-content fxLayout="row wrap" fxLayoutGap="1rem">
@@ -61,9 +61,9 @@
 
     </div>
 
-    <div fxLayout="row wrap" fxLayoutGap="1rem" fxLayoutAlign="center">
+    <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="1rem" fxLayoutAlign="center">
 
-        <mat-card fxFlex="1 1 20rem">
+        <mat-card fxFlex="1 1 25rem" fxFlex.lt-md="0 0 auto">
             <h1>Desempenho por módulo</h1>
 
             <mat-card-content>
@@ -71,7 +71,7 @@
             </mat-card-content>
         </mat-card>
 
-        <mat-card fxFlex="1 1 20rem">
+        <mat-card fxFlex="1 1 25rem" fxFlex.lt-md="0 0 auto">
             <h1>Média de desempenho</h1>
 
             <mat-card-content>
