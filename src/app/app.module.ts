@@ -8,6 +8,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MorrisJsModule } from 'angular-morris-js';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,7 +40,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     FlexLayoutModule,
     MatTableModule,
     MatCardModule,
-    MorrisJsModule
+    MorrisJsModule,
+    MatTabsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

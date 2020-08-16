@@ -1,1 +1,31 @@
-<p>selecao works!</p>
+<mat-tab-group mat-align-tabs="center">
+
+    <mat-tab [label]="opcao.nome" *ngFor="let opcao of opcoes">
+
+        <div fxLayout="row wrap" fxLayoutAlign="center" fxLayout.lt-md="column" fxLayoutAlign.lt-md="start stretch"
+            fxLayoutGap="1rem" class="tab-conteudo">
+
+            <mat-card fxFlex="1 1 20rem" fxFlex.lt-md="0 0 auto" fxLayout="column">
+                <h1 fxFlex="0 0 auto">{{opcao.modulo.titulo}}</h1>
+                <mat-card-content fxFlex="1 0 auto" fxLayout="column" fxLayoutAlign="space-between">
+                    <span fxFlex="0 0 auto" class="materia"
+                        *ngFor="let materia of opcao.materias.materias">{{materia.titulo}}</span>
+                    <button fxFlex="0 0 auto" mat-flat-button color="primary"
+                        (click)="clickOpcao(opcao.modulo.id)">Módulo</button>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card fxFlex="1 1 20rem" fxFlex.lt-md="0 0 auto">
+                <h1>{{opcao.materias.titulo}}</h1>
+                <mat-card-content fxLayout="column" fxLayoutGap="1rem">
+                    <button fxFlex="0 0 auto" mat-flat-button color="primary"
+                        *ngFor="let materia of opcao.materias.materias"
+                        (click)="clickOpcao(materia.id)">{{materia.titulo}}</button>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+
+    </mat-tab>
+
+</mat-tab-group>
