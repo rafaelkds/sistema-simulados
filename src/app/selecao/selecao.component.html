@@ -11,7 +11,7 @@
                     <span fxFlex="0 0 auto" class="materia"
                         *ngFor="let opcao of tab.materias.opcoes">{{opcao.nome}}</span>
                     <button fxFlex="0 0 auto" mat-flat-button color="primary"
-                        (click)="clickOpcao(tab.modulo)">{{opcao.nome}}</button>
+                        (click)="clickOpcao(tab.modulo)">{{tab.modulo.nome}}</button>
                 </mat-card-content>
             </mat-card>
 
