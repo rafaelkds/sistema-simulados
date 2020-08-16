@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-painel',
@@ -29,22 +30,22 @@ export class PainelComponent implements OnInit {
     colors: ['#009900', '#FF0000', '#CCCCCC']
   };
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     const ctx = (document.getElementById('painel-chart-desempenho') as any).getContext('2d');
     const myBarChart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: ['PSS', 'RPA', 'ESS', 'CGA'],
-          // backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
-          // borderColor: window.chartColors.blue,
-          // borderWidth: 1,
-          datasets: [{
-              data: [0.5, 1, -0.5, -0.75],
-              backgroundColor: ['blue', 'blue', 'blue', 'blue'],
-              borderWidth: 1
-          }]
+        labels: ['PSS', 'RPA', 'ESS', 'CGA'],
+        // backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+        // borderColor: window.chartColors.blue,
+        // borderWidth: 1,
+        datasets: [{
+          data: [0.5, 1, -0.5, -0.75],
+          backgroundColor: ['blue', 'blue', 'blue', 'blue'],
+          borderWidth: 1
+        }]
       },
       options: {
         legend: {
@@ -53,6 +54,10 @@ export class PainelComponent implements OnInit {
         maintainAspectRatio: false
       }
     });
+  }
+
+  clickNova(): void {
+    this.router.navigate(['novo'], { skipLocationChange: true });
   }
 
 }

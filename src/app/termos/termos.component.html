@@ -1,1 +1,20 @@
-<p>termos works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{titulo}}</mat-card-title>
+        <mat-card-subtitle>Tempo da prova: 30min</mat-card-subtitle>
+        <mat-card-subtitle>Total de questões: 20</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <h2>Instruções e termos para a prova</h2>
+        <p>Conforme previsto na Instrução Suplementar da ANAC (IS Nº 00-003 Revisão D) que orienta quanto a Exames teóricos para concessão de licenças, habilitações e certificados, os exames são divididos em matérias. Cada matéria é composta por 20 (vinte) questões de múltipla escolha, com quatro alternativas cada, sendo somente uma alternativa correta. Para você se preparar sem surpresas e nervosismo, seguimos o padrão da ANAC quanto aos exames aplicados, bem como as matérias que os compõem e a duração de cada matéria: Matéria: PRIMEIROS SOCORROS 30 min (20 perguntas)</p>
+        <p>1. Será considerado APROVADO o candidato que: No exame de Comissário de Voo, atingir, no mínimo, 70% (14 pontos) de acertos na média total das matérias.</p>
+        <p>2. As questões serão exibidas de 1 à 20, o candidato poderá clicar na questão desejada ou no botão "Próxima" localizado abaixo.</p>
+        <p>3. Caso o candidato deseje encerrar a prova, basta clicar no botão localizado na parte inferior do sistema chamado: "Finalizar Prova", que deve ser clicado somente no final, quando você tiver certeza do encerramento da prova.</p>
+        <p>4. Embora não seja possível na ANAC, aqui em nosso site ao finalizar a prova você poderá visualizar o resultado por Matéria e o Gabarito da Prova, somente será exibido resultados de matérias a partir de 50% de aproveitamento.</p>
+        <p>5. Clicando em Aceitar e Iniciar a Prova, você está de acordo com todos os itens acima informados.</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button color="primary" (click)="clickVoltar()">Voltar</button>
+        <button mat-flat-button color="primary" (click)="clickIniciar()">Iniciar</button>
+    </mat-card-actions>
+</mat-card>

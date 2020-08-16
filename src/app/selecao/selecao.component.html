@@ -1,26 +1,26 @@
-<mat-tab-group mat-align-tabs="center">
+<mat-tab-group mat-align-tabs="center" *ngIf="!idselecionado">
 
-    <mat-tab [label]="opcao.nome" *ngFor="let opcao of opcoes">
+    <mat-tab [label]="tab.nome" *ngFor="let tab of tabs">
 
         <div fxLayout="row wrap" fxLayoutAlign="center" fxLayout.lt-md="column" fxLayoutAlign.lt-md="start stretch"
             fxLayoutGap="1rem" class="tab-conteudo">
 
             <mat-card fxFlex="1 1 20rem" fxFlex.lt-md="0 0 auto" fxLayout="column">
-                <h1 fxFlex="0 0 auto">{{opcao.modulo.titulo}}</h1>
+                <h1 fxFlex="0 0 auto">{{tab.modulo.titulo}}</h1>
                 <mat-card-content fxFlex="1 0 auto" fxLayout="column" fxLayoutAlign="space-between">
                     <span fxFlex="0 0 auto" class="materia"
-                        *ngFor="let materia of opcao.materias.materias">{{materia.titulo}}</span>
+                        *ngFor="let opcao of tab.materias.opcoes">{{opcao.nome}}</span>
                     <button fxFlex="0 0 auto" mat-flat-button color="primary"
-                        (click)="clickOpcao(opcao.modulo.id)">Módulo</button>
+                        (click)="clickOpcao(tab.modulo)">{{opcao.nome}}</button>
                 </mat-card-content>
             </mat-card>
 
             <mat-card fxFlex="1 1 20rem" fxFlex.lt-md="0 0 auto">
-                <h1>{{opcao.materias.titulo}}</h1>
+                <h1>{{tab.materias.titulo}}</h1>
                 <mat-card-content fxLayout="column" fxLayoutGap="1rem">
                     <button fxFlex="0 0 auto" mat-flat-button color="primary"
-                        *ngFor="let materia of opcao.materias.materias"
-                        (click)="clickOpcao(materia.id)">{{materia.titulo}}</button>
+                        *ngFor="let opcao of tab.materias.opcoes"
+                        (click)="clickOpcao(opcao)">{{opcao.nome}}</button>
                 </mat-card-content>
             </mat-card>
 
@@ -29,3 +29,5 @@
     </mat-tab>
 
 </mat-tab-group>
+
+<app-termos [(id)]="idselecionado" [titulo]="tituloselecionado" *ngIf="idselecionado"></app-termos>

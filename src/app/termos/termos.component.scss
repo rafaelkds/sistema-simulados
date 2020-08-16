@@ -1,0 +1,11 @@
+mat-card-header {
+    justify-content: center;
+    text-align: center;
+}
+
+mat-card-actions {
+    text-align: center;
+    :first-child {
+        margin-right: 1rem;
+    }
+}

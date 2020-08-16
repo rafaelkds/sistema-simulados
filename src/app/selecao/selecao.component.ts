@@ -7,31 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelecaoComponent implements OnInit {
 
-  opcoes = [
+  tabs = [
     {
       nome: 'Comissário',
       modulo: {
-        id: 0,
-        titulo: 'Módulo - 80 perguntas'
+        id: -1,
+        titulo: 'Módulo - 80 perguntas',
+        nome: 'Módulo Comissário'
       },
       materias: {
         titulo: 'Matérias - 20 perguntas',
-        materias:  [
+        opcoes: [
           {
-            id: 0,
-            titulo: 'Primeiros Socorros'
+            id: -1,
+            nome: 'Primeiros Socorros'
           },
           {
-            id: 0,
-            titulo: 'Reg. da Prof. do Aeronauta'
+            id: -1,
+            nome: 'Reg. da Prof. do Aeronauta'
           },
           {
-            id: 0,
-            titulo: 'Emergência Sobrevivência e Segurança'
+            id: -1,
+            nome: 'Emergência Sobrevivência e Segurança'
           },
           {
-            id: 0,
-            titulo: 'Conhecimento Gerais de Aeronaves'
+            id: -1,
+            nome: 'Conhecimento Gerais de Aeronaves'
           }
         ]
       }
@@ -39,44 +40,49 @@ export class SelecaoComponent implements OnInit {
     {
       nome: 'Piloto',
       modulo: {
-        id: 0,
-        titulo: 'Módulo - 100 perguntas'
+        id: -1,
+        titulo: 'Módulo - 100 perguntas',
+        nome: 'Módulo Piloto'
       },
       materias: {
         titulo: 'Matérias - 20 perguntas',
-        materias:  [
+        opcoes: [
           {
-            id: 0,
-            titulo: 'Teoria de Voo'
+            id: -1,
+            nome: 'Teoria de Voo'
           },
           {
-            id: 0,
-            titulo: 'Motores'
+            id: -1,
+            nome: 'Motores'
           },
           {
-            id: 0,
-            titulo: 'Regulamentos'
+            id: -1,
+            nome: 'Regulamentos'
           },
           {
-            id: 0,
-            titulo: 'Meteorologia'
+            id: -1,
+            nome: 'Meteorologia'
           },
           {
-            id: 0,
-            titulo: 'Navegação'
+            id: -1,
+            nome: 'Navegação'
           }
         ]
       }
     }
   ];
 
+  idselecionado: number;
+  tituloselecionado: string;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  clickOpcao(id: number): void {
-
+  clickOpcao(opcao: { id: number, nome: string }): void {
+    this.idselecionado = opcao.id;
+    this.tituloselecionado = opcao.nome;
   }
 
 }
